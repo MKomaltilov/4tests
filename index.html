@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function setToTest() {
+            var content = document.getElementById('content');
+            content.innerHTML = '';
+            content.innerHTML = 'Test pushed';
+            console.log(content);
+        }
+        function setToRandom(max, min = 1) {
+            var content = document.getElementById('content');
+            content.innerHTML = Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+        function sayHi() {
+            var greeting = document.getElementById('greeting');
+            var name = document.getElementById('name').value;
+            if(name !== '') {
+                greeting.innerHTML = 'Hello ' + name + '!';
+            } else {
+                greeting.innerHTML = 'Hello mysterios stranger!';
+            }
+            console.log(name)
+        }
+    </script>
+</head>
+<body>
+    <div id="greeting">
+        Enter your name: 
+        <input type="text" id="name">
+        <input type="button" value="Send" onclick="sayHi()">
+    </div>
+
+    <br>
+    <hr>
+    <br>
+
+    <div id="buttons">
+        <input type="button" value="Reload page" onclick="window.location.reload()">
+        <input type="button" value="Test" onclick="setToTest()">
+        <input type="button" value="D4" onclick="setToRandom(4)">
+        <input type="button" value="D6" onclick="setToRandom(6)">
+        <input type="button" value="D8" onclick="setToRandom(8)">
+        <input type="button" value="D10" onclick="setToRandom(10)">
+        <input type="button" value="D12" onclick="setToRandom(12)">
+        <input type="button" value="D20" onclick="setToRandom(20)">
+        <input type="button" value="D100" onclick="setToRandom(100)">
+    </div>
+    <div id="content">
+        Lorem ipsum...
+    </div>
+
+    <br>
+    <hr>
+    <br>
+
+
+</body>
+</html>
